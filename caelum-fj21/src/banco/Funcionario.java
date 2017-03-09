@@ -1,9 +1,9 @@
 package banco;
 
-class Funcionario {
-	private String nome;
+abstract class Funcionario {
+	protected String nome;
 	private String departamento;
-	private double salario;
+	protected double salario;
 	private Data dataEntrada = new Data();
 	private String rg;
 	private boolean estaNaEmpresa = true;
@@ -19,9 +19,10 @@ class Funcionario {
 		this.nome = nome;
 	}
 	
-	void bonificacao(double aumento){
+	void setBonificacao(double aumento){
 		this.salario += aumento;
 	}
+	abstract double getBonificacao();
 	
 	void demite(){
 		this.estaNaEmpresa = false;

@@ -8,7 +8,7 @@ public class TesteEmpresa {
 		int quantidadeDeFuncionarios = 3;
 		
 		for( int i = 0 ; i < quantidadeDeFuncionarios; i++ ){
-			Funcionario f = new Funcionario("joao" + i);
+			Gerente f = new Gerente("joao" + i);
 			f.setSalario( 1000 + i * 100 );	
 			empresa.adiciona(f);
 		}
