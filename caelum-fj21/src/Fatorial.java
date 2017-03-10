@@ -1,4 +1,5 @@
 
+
 public class Fatorial {
 	public static void main(String[] args){
 		long fatorial = 1;

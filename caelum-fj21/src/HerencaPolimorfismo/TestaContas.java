@@ -6,7 +6,6 @@ public class TestaContas {
 		ContaCorrente cc = new ContaCorrente();
 		ContaPoupanca cp = new ContaPoupanca();
 		
-		
 		cc.deposita(1000);
 		cp.deposita(1000);
 		

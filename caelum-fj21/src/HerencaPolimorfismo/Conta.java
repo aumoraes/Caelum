@@ -13,5 +13,5 @@ abstract class Conta {
 		return this.saldo;
 	}
 	
-	abstract void atualiza(double taxaSelic);
+	public abstract void atualiza(double taxaSelic);
 }
