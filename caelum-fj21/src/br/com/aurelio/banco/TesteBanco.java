@@ -14,8 +14,8 @@ public class TesteBanco {
 		ContaPoupanca cp = new ContaPoupanca();
 		Banco banco = new Banco();
 		
-		cc.deposita(1000);
 		try {
+			cc.deposita(1000);
 			cp.deposita(1000);
 		} catch (ValorInvalidoException e) {
 			// TODO Auto-generated catch block

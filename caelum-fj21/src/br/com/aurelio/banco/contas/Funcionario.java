@@ -2,8 +2,9 @@ package br.com.aurelio.banco.contas;
 
 public abstract class Funcionario {
 	protected String nome;
-	private String departamento;
 	protected double salario;
+	protected double bonificacao;
+	private String departamento;
 	private Data dataEntrada = new Data();
 	private String rg;
 	private boolean estaNaEmpresa = true;
@@ -20,9 +21,12 @@ public abstract class Funcionario {
 	}
 	
 	public void setBonificacao(double aumento){
-		this.salario += aumento;
+		this.bonificacao = this.salario * 1.4;	
 	}
-	abstract double getBonificacao();
+	
+	public double getBonificacao(){
+		return this.bonificacao;
+	}
 	
 	void demite(){
 		this.estaNaEmpresa = false;

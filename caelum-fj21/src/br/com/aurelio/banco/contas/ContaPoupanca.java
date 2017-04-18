@@ -3,8 +3,6 @@ package br.com.aurelio.banco.contas;
 //public class ContaPoupanca implements ContaInterface{
 public class ContaPoupanca extends Conta{
 	
-	protected double saldo;
-	
 	@Override
 	public void atualiza(double taxaSelic) {
 		this.saldo += this.saldo * taxaSelic;

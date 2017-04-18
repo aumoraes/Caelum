@@ -8,7 +8,7 @@ public class TesteEmpresa {
 	
 	public static void main(String[] args) {
 		
-		Empresa empresa = new Empresa(3);
+		Empresa empresa = new Empresa();
 		int quantidadeDeFuncionarios = 3;
 		
 		for( int i = 0 ; i < quantidadeDeFuncionarios; i++ ){
@@ -17,8 +17,7 @@ public class TesteEmpresa {
 			empresa.adiciona(f);
 		}
 
-		empresa.mostraEmpregados();
-		
+		empresa.mostraEmpregados();		
 		
 		System.out.println("Total de funcionario criados: " + Funcionario.getIdentificador() );
 		

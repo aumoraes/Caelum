@@ -3,7 +3,8 @@ package br.com.aurelio.banco.contas;
 public class PessoaFisica {
 	
 	private String cpf;
-		private String nome;
+	private String nome;
+	
 	public PessoaFisica(String cpf) {
 		if( validaCpf(cpf) ){
 			this.cpf = cpf;	
