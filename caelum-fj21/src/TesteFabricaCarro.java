@@ -2,7 +2,7 @@
 public class TesteFabricaCarro {
 	
 	public static void main(String[] args){
-		FabricaDeCarroSingleton fc = FabricaDeCarroSingleton.getInstance();			
+		FabricaDeCarroSingleton fc = FabricaDeCarroSingleton.getInstance();
 		
 		fc.setNome("aurelio");
 		
