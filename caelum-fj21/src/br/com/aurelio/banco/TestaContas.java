@@ -24,5 +24,7 @@ public class TestaContas {
 		
 		System.out.println(cc.getSaldo());
 		System.out.println(cp.getSaldo());
+		
+		cp.saca(500);
 	}
 }
