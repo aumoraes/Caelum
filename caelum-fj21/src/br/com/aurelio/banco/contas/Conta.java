@@ -7,18 +7,15 @@ package br.com.aurelio.banco.contas;
 */
 
 public abstract class Conta {
-	protected double saldo;
+	
 	private double saldoReal;
 	private double limite;
+	protected Cliente cliente;
 	
-	/**
-	* Metodo que incrementa o saldo.
-	* @param valor
-	*/
 	
-//	public Conta(double limite) {
-//		this.limite = limite;
-//	}
+	public Conta(double limite) {
+		this.limite = limite;
+	}
 	
 	public void deposita(double valor) throws ValorInvalidoException {
 		if( valor < 0 ){
@@ -26,7 +23,7 @@ public abstract class Conta {
 			throw new ValorInvalidoException(valor);
 			
 		}
-		this.saldo += valor;
+		this.saldoReal += valor;
 	}
 	public boolean saca(double valor) {
 		if (!isSaldoSuficiente(valor)) {
@@ -36,11 +33,27 @@ public abstract class Conta {
 			return true;
 		}
 	}
+
+	public double getSaldo() {
+		return this.saldoReal;
+	}
+	
 	private boolean isSaldoSuficiente(double valor) {
 		return (this.saldoReal + this.limite) > valor;
 	}
-	public double getSaldo() {
-		return this.saldo;
+	
+	public String getClienteNome(){
+		return cliente.getNome();
+	}
+	public String getClienteTelefone(){
+		return cliente.getNome();
+	}
+	public String getCliente(){
+		return cliente.getNome();
+	}
+	
+	public String getClienteToString(){
+		return "Nome: " + cliente.getNome() + ", Telefone: " + cliente.getTelefone();
 	}
 	
 	public abstract void atualiza(double taxaSelic);

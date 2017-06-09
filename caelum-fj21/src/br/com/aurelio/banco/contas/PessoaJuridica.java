@@ -1,36 +1,35 @@
 package br.com.aurelio.banco.contas;
 
-public class PessoaFisica implements Cliente{
-	
-	private String cpf;
+public class PessoaJuridica implements Cliente{
+	private String cnpj;
 	private String nome;
 	private String telefone;
 	
-	public PessoaFisica(String cpf, String nome) {
-		
+	public PessoaJuridica(String cnpj, String nome) {		
 		this.nome = nome;
 		
-		if( validaDados(cpf) ){
-			this.cpf = cpf;	
+		if( validaDados(cnpj) ){
+			this.cnpj = cnpj;	
 		} else {
 			return;
 		}
 	}
-	public String getCpf() {
-		return cpf;
+	
+	public String getCnpf(){
+		return this.cnpj;
 	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+	
+	public void setCnpj( String cnpj){
+		this.cnpj = cnpj;
 	}
-
+	@Override
 	public String getNome() {
-		return nome;
+		return this.nome;
 	}
 
 	@Override
 	public void setNome(String nome) {
-		this.nome = nome;		
+		this.nome = nome;
 	}
 
 	@Override
@@ -41,13 +40,12 @@ public class PessoaFisica implements Cliente{
 	@Override
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
-		
 	}
 
 	@Override
 	public boolean validaDados(String numeroRegistro) {
-		String[] formatedCpf = numeroRegistro.split(".|-");
-		if(formatedCpf.length == 11){
+		String[] formatedCnpj = numeroRegistro.split(".|-");
+		if(formatedCnpj.length == 10){
 			return true;
 		} else {
 			return false;
