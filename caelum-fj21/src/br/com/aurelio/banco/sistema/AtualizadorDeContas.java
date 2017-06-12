@@ -1,6 +1,6 @@
 package br.com.aurelio.banco.sistema;
 
-import br.com.aurelio.banco.contas.Conta;
+import br.com.aurelio.banco.contas.ContaInterface;
 
 public class AtualizadorDeContas {
 
@@ -10,18 +10,13 @@ public class AtualizadorDeContas {
 	public AtualizadorDeContas(double selic) {
 		this.selic = selic;
 	}
-//	public void roda(ContaInterface contaInterface) {
-//		System.out.println("Saldo anterior: " + contaInterface.getSaldo());
-//		contaInterface.atualiza(selic);
-//		saldoTotal += contaInterface.getSaldo();
-//		System.out.println("Saldo final: " + contaInterface.getSaldo());
-//	}
-	public void roda(Conta contaInterface) {
+	public void roda(ContaInterface contaInterface) {
 		System.out.println("Saldo anterior: " + contaInterface.getSaldo());
 		contaInterface.atualiza(selic);
 		saldoTotal += contaInterface.getSaldo();
 		System.out.println("Saldo final: " + contaInterface.getSaldo());
 	}
+
 	public double getSaldoTotal(){
 		return this.saldoTotal;
 	}

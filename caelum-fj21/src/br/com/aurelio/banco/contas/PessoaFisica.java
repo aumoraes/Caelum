@@ -1,14 +1,13 @@
 package br.com.aurelio.banco.contas;
 
-public class PessoaFisica implements Cliente{
+public class PessoaFisica extends Cliente{
 	
 	private String cpf;
-	private String nome;
-	private String telefone;
 	
-	public PessoaFisica(String cpf, String nome) {
+	public PessoaFisica(String cpf, String nome, String telefone) {
 		
 		this.nome = nome;
+		this.telefone = telefone;
 		
 		if( validaDados(cpf) ){
 			this.cpf = cpf;	
@@ -16,32 +15,13 @@ public class PessoaFisica implements Cliente{
 			return;
 		}
 	}
+	
 	public String getCpf() {
 		return cpf;
 	}
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	@Override
-	public void setNome(String nome) {
-		this.nome = nome;		
-	}
-
-	@Override
-	public String getTelefone() {
-		return this.telefone;
-	}
-
-	@Override
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-		
 	}
 
 	@Override

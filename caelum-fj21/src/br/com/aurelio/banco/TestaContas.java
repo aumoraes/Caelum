@@ -1,14 +1,20 @@
 package br.com.aurelio.banco;
 
+import br.com.aurelio.banco.contas.Cliente;
 import br.com.aurelio.banco.contas.ContaCorrente;
+import br.com.aurelio.banco.contas.ContaInterface;
 import br.com.aurelio.banco.contas.ContaPoupanca;
+import br.com.aurelio.banco.contas.PessoaFisica;
 import br.com.aurelio.banco.contas.ValorInvalidoException;
 
 public class TestaContas {
 	public static void main(String[] args) {
 		
-		ContaCorrente cc = new ContaCorrente();
-		ContaPoupanca cp = new ContaPoupanca();
+		Cliente c1 = new PessoaFisica("11246488876", "maria da silva cesario", "960294667");
+		ContaInterface cc = new ContaCorrente(1, c1, 500);
+		
+		Cliente c2 = new PessoaFisica("11246488876", "maria da silva cesario", "960294667");
+		ContaInterface cp = new ContaPoupanca(1, c2, 500);
 		
 		
 		try {
@@ -25,6 +31,6 @@ public class TestaContas {
 		System.out.println(cc.getSaldo());
 		System.out.println(cp.getSaldo());
 		
-		cp.saca(500);
+		//cp.saca(500);
 	}
 }

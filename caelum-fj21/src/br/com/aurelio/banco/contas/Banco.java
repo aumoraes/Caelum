@@ -3,18 +3,18 @@ package br.com.aurelio.banco.contas;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Banco {
-	List<Conta> contas = new ArrayList<Conta>();
+public class Banco{
+	List<ContaInterface> contasInterface = new ArrayList<ContaInterface>();
 	
-	public void adiciona(Conta c){
-		contas.add(c);
-	}
+	public void adiciona(ContaInterface c){
+		contasInterface.add(c);
+	}	
 	
-	public Conta pegaConta(int x){
-		return contas.get(x);
+	public ContaInterface pegaConta(int x){
+		return contasInterface.get(x);
 	}
 	
 	public int pegaTotalDeContas(){
-		return contas.size();
+		return contasInterface.size();
 	}
 }

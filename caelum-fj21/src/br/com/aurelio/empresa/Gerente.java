@@ -1,4 +1,4 @@
-package br.com.aurelio.banco.contas;
+package br.com.aurelio.empresa;
 
 public class Gerente extends Funcionario{
 	
@@ -13,5 +13,6 @@ public class Gerente extends Funcionario{
 	public void setBonificacao(double aumento) {
 		this.bonificacao  = this.salario * 1.4 + 1000;
 	}
+
 
 }

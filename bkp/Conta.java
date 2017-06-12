@@ -1,4 +1,7 @@
-package br.com.aurelio.banco.contas;
+package br.com.aurelio.empresa.contas;
+
+import br.com.aurelio.banco.contas.Cliente;
+import br.com.aurelio.banco.contas.ValorInvalidoException;
 
 /**
 * Classe responsável por moldar as Contas do Banco

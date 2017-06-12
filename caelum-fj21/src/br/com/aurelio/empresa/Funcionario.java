@@ -1,21 +1,28 @@
-package br.com.aurelio.banco.contas;
+package br.com.aurelio.empresa;
 
-public abstract class Funcionario {
+public abstract class Funcionario implements Comparable<Funcionario> {
+	
 	protected String nome;
+	
 	protected double salario;
+	
 	protected double bonificacao;
+	
 	private String departamento;
+	
 	private Data dataEntrada = new Data();
+	
 	private String rg;
+	
 	private boolean estaNaEmpresa = true;
 	
 	static int identificador = 0;
 	
-	Funcionario(){
+	public Funcionario(){
 		identificador++;
 	}
 	
-	Funcionario(String nome ){
+	public Funcionario(String nome ){
 		identificador++;
 		this.nome = nome;
 	}
@@ -36,15 +43,7 @@ public abstract class Funcionario {
 		return this.salario * 12;
 	}
 	
-	public void mostra(){
-		System.out.println("Nome: " + this.nome);
-		System.out.println("Departamento: " + this.departamento);
-		System.out.println("Salario: " + salario);
-		System.out.println("Data de Entrada: " + this.dataEntrada.formatada());
-		System.out.println("RG: " + this.rg);
-		System.out.println("Esta na empresa? " + this.estaNaEmpresa);
-		System.out.println("Bonificação: " + this.getBonificacao());
-	}
+	
 	
 	public static int getIdentificador(){
 		return identificador;
@@ -73,8 +72,8 @@ public abstract class Funcionario {
 		this.salario = salario;
 	}
 
-	public Data getDataEntrada() {
-		return dataEntrada;
+	public String getDataEntrada() {
+		return dataEntrada.formatadata();
 	}
 
 	public void setDataEntrada(Data dataEntrada) {
@@ -96,6 +95,40 @@ public abstract class Funcionario {
 	public void setEstaNaEmpresa(boolean estaNaEmpresa) {
 		this.estaNaEmpresa = estaNaEmpresa;
 	}
+	
+
+	@Override
+	public int compareTo(Funcionario o) {
+		return this.nome.compareTo(o.getNome());
+	}
+	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((rg == null) ? 0 : rg.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+        if(!(obj instanceof Funcionario)) return false; 
+
+        if(obj == this) return true;
+
+        Funcionario empregado = (Funcionario) obj; 
+
+        return this.identificador == empregado.getIdentificador();
+	}
+
+	@Override
+	public String toString() {
+		return "Funcionario [nome=" + nome + ", salario=" + salario + ", bonificacao=" + bonificacao + ", departamento="
+				+ departamento + ", dataEntrada=" + getDataEntrada() + ", rg=" + rg + ", estaNaEmpresa=" + estaNaEmpresa
+				+ "]";
+	}
+
 	
 	
 }

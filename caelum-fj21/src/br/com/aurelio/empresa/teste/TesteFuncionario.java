@@ -1,7 +1,7 @@
-package br.com.aurelio.banco;
+package br.com.aurelio.empresa.teste;
 
-import br.com.aurelio.banco.contas.Data;
-import br.com.aurelio.banco.contas.Gerente;
+import br.com.aurelio.empresa.Data;
+import br.com.aurelio.empresa.Gerente;
 
 public class TesteFuncionario {
 	public static void main(String[] args) {
@@ -14,6 +14,6 @@ public class TesteFuncionario {
 		g1.setSalario(100);
 		g1.setDataEntrada(dataEntrada);
 		g1.setBonificacao(50);
-		g1.mostra();
+		System.out.println( g1.toString() );
 	}
 }

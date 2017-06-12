@@ -1,13 +1,27 @@
 package br.com.aurelio.banco.contas;
 
-public interface Cliente {
+public abstract class Cliente {
 	
-	public String getNome();
-	public void setNome( String nome);
+	protected String nome;
 	
-	public String getTelefone();
-	public void setTelefone( String telefone );
+	protected String telefone;
 	
-	boolean validaDados( String numeroRegistro);
+	public String getNome(){
+		return this.nome;
+	}
+	
+	public void setNome( String nome){
+		this.nome = nome;
+	}
+	
+	public String getTelefone(){
+		return this.telefone;
+	}
+	
+	public void setTelefone( String telefone ){
+		this.telefone = telefone;
+	}
+	
+	abstract boolean validaDados( String numeroRegistro);
 
 }
