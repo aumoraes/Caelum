@@ -16,7 +16,7 @@ public class TesteThread {
 //		t2.start();
 		
 		for (int  i = 0; i < 2; i++) {
-			final int t = i;
+			final int t = i;	
 			new Thread(() -> {
 				for(int j = 0; j < 10000; j++)
 				System.out.println("programa "+ t +" valor " + j);
