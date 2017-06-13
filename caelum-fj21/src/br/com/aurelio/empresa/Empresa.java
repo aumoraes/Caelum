@@ -4,21 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Empresa {
-	Map<String, Funcionario> empregado = new HashMap();
-	//List<Funcionario> empregado = new ArrayList();
-	//Set<Funcionario> empregado = new HashSet();
+	Map<String, Funcionario> empregado = new HashMap<String, Funcionario>();
 	String cnpj;
 	String nome;
 
 
 	public void adiciona(Funcionario f){
 		this.empregado.put(f.getNome(), f);
-		//this.empregado.add(f);
 	}
 	
 	public int qtdFuncionarios(){
-		//return	this.empregado.size();
-		return 0;
+		return	this.empregado.size();
 	}
 	public Funcionario getFuncionario (int index) {
 		//return this.empregado.get(index);
@@ -31,9 +27,6 @@ public class Empresa {
 		{
 		    System.out.println( entry.getValue().toString() );
 		}
-//		for(Funcionario f : empregado){
-//			System.out.println( f.toString() );
-//		}
 		
 	}
 	
@@ -42,9 +35,7 @@ public class Empresa {
 		return "Empresa [empregado=" + empregado + ", cnpj=" + cnpj + ", nome=" + nome + "]";
 	}
 
-	//public boolean contem(String nome){
-	public boolean contem(Funcionario f){
+	public boolean contem(String nome){
 		return empregado.containsKey( nome );
-		//return empregado.contains(f);
 	}
 }

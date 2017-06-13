@@ -119,7 +119,7 @@ public abstract class Funcionario implements Comparable<Funcionario> {
 
         Funcionario empregado = (Funcionario) obj; 
 
-        return this.identificador == empregado.getIdentificador();
+        return this.rg == empregado.getRg();
 	}
 
 	@Override

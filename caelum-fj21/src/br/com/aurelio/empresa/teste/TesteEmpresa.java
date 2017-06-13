@@ -2,7 +2,6 @@ package br.com.aurelio.empresa.teste;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import br.com.aurelio.empresa.Empresa;
@@ -25,16 +24,6 @@ public class TesteEmpresa {
 			empresa.adiciona(f);
 			funcionarios.add(f);
 		}
-		
-		Comparator<String> comparador = new Comparator<String>() {
-
-			@Override
-			public int compare(String o1, String o2) {
-				// TODO Auto-generated method stub
-				return 0;
-			}
-
-		};
 			
 		Collections.sort(funcionarios);
 		
