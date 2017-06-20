@@ -1,5 +1,7 @@
 package br.com.aurelio.thread;
 
+import java.util.Scanner;
+
 public class TesteThread {	
 	public static void main(String[] args) {
 	
@@ -15,12 +17,21 @@ public class TesteThread {
 //		Thread t2 = new Thread(p2);
 //		t2.start();
 		
-		for (int  i = 0; i < 2; i++) {
-			final int t = i;	
-			new Thread(() -> {
-				for(int j = 0; j < 10000; j++)
-				System.out.println("programa "+ t +" valor " + j);
-			}).start();
+//		for (int  i = 0; i < 2; i++) {
+//			final int t = i;	
+//			new Thread(() -> {
+//				for(int j = 0; j < 10000; j++)
+//				System.out.println("programa "+ t +" valor " + j);
+//			}).start();
+//		}
+		
+		Scanner sc = new Scanner(System.in);
+		
+		while(sc.hasNext()){
+			String[] teste = sc.nextLine().split("!");
+			System.out.println(teste.length);
+			System.out.println(teste[0]);
 		}
+		
 	}
 }
