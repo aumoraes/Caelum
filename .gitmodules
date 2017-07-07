@@ -1,3 +1,6 @@
 [submodule "fj-11"]
 	path = fj-11
 	url = https://github.com/aurelioMoraes/fj-11.git
+[submodule "fj-22"]
+	path = fj-22
+	url = https://github.com/aumoraes/fj-22.git
